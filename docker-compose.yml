@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  map:
+    build: ./
+    ports:
+      - "3000:3000"
+    environment:
+      HOSTNAME: 192.168.200.17
+      PORT: 3306
+      USER: sa
+      PASS: sa
+      DATABASE: jit_test
+      USERLOGIN: "SELECT * FROM user WHERE users = ?"
+      GETCEAS: "SELECT * FROM ceas"
+      POSTCEAS: "INSERT INTO ceas (name_ceas, detail, address, color, hn, ar, yakin, yacheed) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+      PUTCEAS: "UPDATE ceas SET name_ceas=?, detail=?, address=?, color=?, hn=?, ar=?, yakin=?, yacheed=? WHERE id=?"
+      DELETECEAS: "DELETE FROM ceas WHERE id = ?"
+      GETPOLYGON: "SELECT * FROM polygon_tambom"
+      GETHOSTAMBON: "SELECT * FROM hos_tambon"
+networks:
+  mynet:
