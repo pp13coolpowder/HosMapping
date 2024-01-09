@@ -54,7 +54,7 @@ const MapHos = () => {
     return (
             <MapContainer
                 className="w-auto h-screen"
-                center={[16.55514636167897, 101.82703803233164]}
+                center={[16.55514636167897, 101.82703803233164]} ////จุดกึ่งกลางแสดงแผนที่
                 zoom={12}
             >
                 <TileLayer
